@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GANESH TADKA - Restaurant</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Sticky Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-nav">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img id="ganeshlogo" src="ganeshlogo.png" alt="Ganesh Logo"> 
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section (Original Background) -->
+<div class="hero-section" id="home">
+    <div class="container">
+        <h1 class="display-4">Welcome to THE GANESH TADKA</h1>
+        <p class="lead">Experience the finest dining in town</p>
+        <a href="#menu" class="btn btn-danger btn-lg">View Menu</a>
+    </div>
+</div>
+
+<!-- Menu Section -->
+<section class="container py-5" id="menu">
+    <h2 class="text-center mb-5">Our Special Menu</h2>
+    <div class="row">
+        <!-- Menu Item 1 -->
+        <div class="col-md-4">
+            <div class="card menu-card">
+                <img src="menu/Pizza.jpg" class="card-img-top" alt="Pizza">
+                <div class="card-body">
+                    <h5 class="card-title">Italian Pizza</h5>
+                    <p class="price-tag">$12.99</p>
+                    <p class="card-text">Authentic Italian pizza with fresh ingredients.</p>
+                </div>
+            </div>
+        </div>
+       
+        <!-- Menu Item 2 -->
+        <div class="col-md-4">
+            <div class="card menu-card">
+                <img src="menu/Burger.jpg" class="card-img-top" alt="Burger">
+                <div class="card-body">
+                    <h5 class="card-title">Classic Burger</h5>
+                    <p class="price-tag">$9.99</p>
+                    <p class="card-text">Juicy beef patty with fresh vegetables and special sauce.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Item 3 -->
+        <div class="col-md-4">
+            <div class="card menu-card">
+                <img src="menu/Pasta.jpg" class="card-img-top" alt="Pasta">
+                <div class="card-body">
+                    <h5 class="card-title">Creamy Pasta</h5>
+                    <p class="price-tag">$11.99</p>
+                    <p class="card-text">Creamy Alfredo pasta with mushrooms and parmesan cheese.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section (Original Structure) -->
+<section class="container py-5" id="gallery">
+    <h2 class="text-center mb-5">Our Gallery</h2>
+    <div class="row">
+        <div class="col-md-4 gallery-img">
+            <img src="gallary/Interior.jpg" class="img-fluid" alt="Interior">
+        </div>
+         <div class="col-md-4 gallery-img">
+            <img src="gallary/bread.jpg" class="img-fluid" alt="bread">
+        </div>
+        <div class="col-md-4 gallery-img">
+            <img src="gallary/Dessert.jpg" class="img-fluid" alt="Dessert">
+        </div>
+        <div class="col-md-4 gallery-img">
+            <img src="gallary/Drinks.jpg" class="img-fluid" alt="Drinks">
+        </div>
+        <div class="col-md-4 gallery-img">
+            <img src="gallary/Salad.jpg" class="img-fluid" alt="Salad">
+        </div>
+        <div class="col-md-4 gallery-img">
+            <img src="gallary/Chef.jpg" class="img-fluid" alt="Chef">
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section  -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <h2 class="text-center mb-4">Contact Us</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="map-container">
+                    <!-- Add your Google Maps iframe here -->
+                    <iframe src="your-map-embed-url" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form action="https://formspree.io/f/your-form-id" method="POST">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Email Address" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer (New Addition) -->
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>Contact</h5>
+                <p>123 Food Street, Mumbai<br>
+                Phone: +91 12345 67890</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>Opening Hours</h5>
+                <p>Daily: 11AM - 11PM<br>
+                Friday Closed</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <div class="social-icons">
+                    <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-light"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <p>&copy; 2023 THE GANESH TADKA. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

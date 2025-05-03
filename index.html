@@ -1,11 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>THE GANESH TADKA - Restaurant</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>My name is ganesh saii</h1>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark sticky-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img id="ganeshlogo" src="restaurantlogo.png" alt=""></a>
+  
+      <!-- Desktop Nav Links -->
+      <ul class="navbar-nav flex-row d-none d-md-flex ms-auto">
+        <li class="nav-item mx-2"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="#menu">Menu</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item mx-2"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item mx-2">
+          <a class="nav-link position-relative" data-bs-toggle="offcanvas" href="#cartPanel" role="button">
+            <i class="fas fa-shopping-cart fa-lg"></i>
+            <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          </a>
+        </li>
+      </ul>
+  
+      <!-- Hamburger Icon -->
+      <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Offcanvas Menu (for mobile only) -->
+      <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">THE GANESH TADKA</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-item">
+              <a class="nav-link position-relative" data-bs-toggle="offcanvas" href="#cartPanel" role="button">
+                <i class="fas fa-shopping-cart fa-lg"></i>
+                <span class="cart-count position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</nav>
+
+<!-- Cart Panel -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="cartPanel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Your Cart</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul id="cart-items" class="list-group"></ul>
+  </div>
+</div>
+<!-- Hero Section -->
+<div class="hero-section" id="home">
+  <div class="container text-white">
+    <h1 class="display-4">Welcome to THE GANESH TADKA</h1>
+    <p class="lead">Experience the finest dining in town</p>
+    <a href="#menu" class="btn btn-danger btn-lg">View Menu</a>
+  </div>
+</div>
+
+<!-- Menu Section -->
+<section class="container py-5" id="menu">
+  <h2 class="text-center mb-5">Our Special Menu</h2>
+  <div class="row">
+       <!-- Menu Item 1 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/Pizza.jpg" class="card-img-top" alt="Pizza">
+          <div class="card-body">
+            <h5 class="card-title">Italian Pizza</h5>
+            <p class="price-tag">₹199</p>
+            <p class="card-text">Authentic Italian pizza with fresh ingredients and mozzarella cheese.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Italian Pizza', 199)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    <!-- Menu Item 2-->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/Burger.jpg" class="card-img-top" alt="Burger">
+          <div class="card-body">
+            <h5 class="card-title">Classic Burger</h5>
+            <p class="price-tag">₹149</p>
+            <p class="card-text">Juicy veggie patty with fresh vegetables and sauce.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Classic Burger', 149)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+      <!--Menu Item 3 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/Pasta.jpg" class="card-img-top" alt="Pasta">
+          <div class="card-body">
+            <h5 class="card-title">Creamy Pasta</h5>
+            <p class="price-tag">₹179</p>
+            <p class="card-text">Creamy Alfredo pasta with mushrooms and parmesan cheese.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Creamy Pasta', 179)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Menu Item 4 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/Sandwich.jpg" class="card-img-top" alt="Sandwich">
+          <div class="card-body">
+            <h5 class="card-title">Grilled Sandwich</h5>
+            <p class="price-tag">₹129</p>
+            <p class="card-text">Toasted sandwich with veggies and melted cheese.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Grilled Sandwich', 129)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Menu Item 5 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/PaneerTikka.jpg" class="card-img-top" alt="Paneer Tikka">
+          <div class="card-body">
+            <h5 class="card-title">Paneer Tikka</h5>
+            <p class="price-tag">₹189</p>
+            <p class="card-text">Smoky grilled paneer with Indian spices and chutney.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Paneer Tikka', 189)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Menu Item 6 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/FrenchFries.jpg" class="card-img-top" alt="French Fries">
+          <div class="card-body">
+            <h5 class="card-title">French Fries</h5>
+            <p class="price-tag">₹99</p>
+            <p class="card-text">Crispy golden fries served with tomato ketchup.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('French Fries', 99)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Menu Item 7 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/Chowmein.webp" class="card-img-top" alt="Chowmein">
+          <div class="card-body">
+            <h5 class="card-title">Veg Chowmein</h5>
+            <p class="price-tag">₹129</p>
+            <p class="card-text">Stir-fried noodles with vegetables and soy sauce.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Veg Chowmein', 129)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Menu Item 8 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/Momos.webp" class="card-img-top" alt="Momos">
+          <div class="card-body">
+            <h5 class="card-title">Veg Momos</h5>
+            <p class="price-tag">₹99</p>
+            <p class="card-text">Steamed momos served with spicy red chutney.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Veg Momos', 99)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Menu Item 9 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/MasalaDosa.jpg" class="card-img-top" alt="Masala Dosa">
+          <div class="card-body">
+            <h5 class="card-title">Masala Dosa</h5>
+            <p class="price-tag">₹159</p>
+            <p class="card-text">South Indian dosa filled with spiced mashed potatoes.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Masala Dosa', 159)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Menu Item 10 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/CholeBhature.jpg" class="card-img-top" alt="Chole Bhature">
+          <div class="card-body">
+            <h5 class="card-title">Chole Bhature</h5>
+            <p class="price-tag">₹149</p>
+            <p class="card-text">Delicious chole served with fluffy bhature and pickle.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Chole Bhature', 149)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Menu Item 11 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/RajmaChawal.webp" class="card-img-top" alt="Rajma Chawal">
+          <div class="card-body">
+            <h5 class="card-title">Rajma Chawal</h5>
+            <p class="price-tag">₹139</p>
+            <p class="card-text">Traditional North Indian dish of rajma with steamed rice.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Rajma Chawal', 139)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Menu Item 12 -->
+      <div class="col-md-4">
+        <div class="card menu-card">
+          <img src="menu/GulabJamun.jpg" class="card-img-top" alt="Gulab Jamun">
+          <div class="card-body">
+            <h5 class="card-title">Gulab Jamun</h5>
+            <p class="price-tag">₹89</p>
+            <p class="card-text">Sweet and soft gulab jamuns soaked in sugar syrup.</p>
+            <button class="btn btn-sm btn-outline-danger" onclick="addToCart('Gulab Jamun', 89)">Add to Cart</button>
+          </div>
+        </div>
+      </div>  
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="container py-5" id="gallery">
+  <h2 class="text-center mb-5">Our Gallery</h2>
+  <div class="row">
+    <div class="col-md-4 gallery-img"><img src="gallary/Interior.jpg" class="img-fluid" alt="Interior"></div>
+    <div class="col-md-4 gallery-img"><img src="gallary/bread.jpg" class="img-fluid" alt="Bread"></div>
+    <div class="col-md-4 gallery-img"><img src="gallary/Dessert.jpg" class="img-fluid" alt="Dessert"></div>
+    <div class="col-md-4 gallery-img"><img src="gallary/Drinks.jpg" class="img-fluid" alt="Drinks"></div>
+    <div class="col-md-4 gallery-img"><img src="gallary/Salad.jpg" class="img-fluid" alt="Salad"></div>
+    <div class="col-md-4 gallery-img"><img src="gallary/Chef.jpg" class="img-fluid" alt="Chef"></div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <h2 class="text-center mb-4">Contact Us</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3"><input type="text" class="form-control" placeholder="Your Name"></div>
+          <div class="mb-3"><input type="email" class="form-control" placeholder="Email Address"></div>
+          <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Your Message"></textarea></div>
+          <button type="submit" class="btn btn-danger">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-light py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <h5>Contact</h5>
+        <p>123 Food Street, Mumbai<br>Phone: +91 12345 67890</p>
+      </div>
+      <div class="col-md-4 mb-3">
+        <h5>Opening Hours</h5>
+        <p>Daily: 11AM - 11PM<br>Friday Closed</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Follow Us</h5>
+        <div class="social-icons">
+          <a href="#" class="text-light me-3"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-light"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-3">
+      <p>&copy; 2023 THE GANESH TADKA. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
